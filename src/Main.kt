@@ -2,29 +2,33 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
 
+    var numbers = arrayOf<Int>(1, 2, 3, 4, 5)
+    var (sum, count, average) = calculateStats(numbers)
+    println("Sum: $sum, Count: $count, Average: $average")
+    printWithoutB("Barnie bakes brown bagels and buns")
     volume(10.6)
     println(isPalindrome("madam"))
-    operations(arrayOf<Int>(3,3,3))
+
 
 }
 
 
+// num1
+fun printWithoutB(input: String) {
+    var words = input.split(" ")
+    for (word in words) {
+        var filteredWord = word.replace("b", "")
+        println(filteredWord)
+    }
+}
 
 
 // num2
-
-fun operations(array: Array<Int>):{
-    for (x in array){
-       println( var sum += x)
-    }
-}
-
-
-fun operations(array: Array<Int>): Int{
-    for (x in array){
-        var sum += x var sum += x
-    }
-
+fun calculateStats(numbers: Array<Int>): Triple<Int, Int, Double> {
+    val sum = numbers.sum()
+    val count = numbers.size
+    val average = sum.toDouble() / count
+    return Triple(sum, count, average)
 }
 
 
@@ -45,3 +49,4 @@ fun isPalindrome(word: String): Boolean{
     return word == word.reversed()
 
 }
+
